@@ -19,4 +19,18 @@ double length(Coord3D *p){
     return sqrt(pow(p->x, 2) + pow(p->y, 2) + pow(p->z, 2));
 }
 
+//Task B: Define a function Coord3D * fartherFromOrigin(Coord3D *p1, Coord3D *p2) whose parameters
+//are the coordinates of two points (passed as pointers), and returns the pointer of the point that is
+//farther away from the origin.
 
+Coord3D* fartherFromOrigin(Coord3D *p1, Coord3D *p2) {
+    //Use the legnth() function to determine the distance of each point from the origin
+    double len1 = length(p1); //point 1
+    double len2 = length(p2); //point 2
+    //Compare the distances
+    if (len1 > len2) { //if the first point is farther from the origin than the second point is
+        return p1; //return the pointer of point 1
+    } else { //otherwise if the second point is farther from the origin than the first point is
+        return p2; //return the pointer of point 2
+    }
+}
