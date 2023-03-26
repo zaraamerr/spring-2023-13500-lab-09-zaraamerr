@@ -34,3 +34,26 @@ Coord3D* fartherFromOrigin(Coord3D *p1, Coord3D *p2) {
         return p2; //return the pointer of point 2
     }
 }
+
+//Task C: Define a function void move(Coord3D *ppos, Coord3D *pvel, double dt) which gets the position
+//and the velocity of an object and has to compute the object’s new coordinates after the time
+//interval dt. 
+
+//The function does not return any values, instead, it should update the object’s position ppos with its
+//new position coordinates.
+
+//Things to note:
+//  1. the object’s new position after the elapsed time dt can be computed as
+//  x' = x + vel.x * dt;
+//  y' = y + vel.x * dt;
+//  z' = z + vel.x * dt;
+
+void move(Coord3D *ppos, Coord3D *pvel, double dt) {
+    //Update the position of the object pointed to by ppos according to its velocity "pvel" and the 
+    //elapsed time "dt". The new position is computed by multiplying each component of pvel with dt and
+    //adding the result to the corresponding component of ppos.
+    ppos->x += pvel->x * dt;
+    ppos->y += pvel->y * dt;
+    ppos->z += pvel->z * dt;
+}
+

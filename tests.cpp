@@ -28,3 +28,20 @@ TEST_CASE("fartherFromOrigin() Test Cases")
     farther = fartherFromOrigin(&p2, &q2);
     CHECK(farther == &q2);
 }
+
+TEST_CASE("Move() Test Cases") 
+{
+    Coord3D pos1 = {0, 0, 100.0};
+    Coord3D vel1 = {1, -5, 0.2};
+    move(&pos1, &vel1, 2.0);
+    CHECK(pos1.x == 2);
+    CHECK(pos1.y == -10);
+    CHECK(pos1.z == 100.4);
+    Coord3D pos2 = {0, 0, 0};
+    Coord3D vel2 = {1, 2, 3};
+    move(&pos2, &vel2, 3.0);
+    CHECK(pos2.x == 3);
+    CHECK(pos2.y == 6);
+    CHECK(pos2.z == 9);
+}
+
