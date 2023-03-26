@@ -45,3 +45,10 @@ TEST_CASE("Move() Test Cases")
     CHECK(pos2.z == 9);
 }
 
+TEST_CASE("Create and Delete Coord3D Test Cases") {
+    Coord3D *p1 = createCoord3D(1.0, 2.0, 3.0);
+    CHECK(p1->x == 1.0);
+    CHECK(p1->y == 2.0);
+    CHECK(p1->z == 3.0);
+    deleteCoord3D(p1);
+}

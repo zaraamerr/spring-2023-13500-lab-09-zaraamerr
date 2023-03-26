@@ -36,4 +36,17 @@ int main()
   Coord3D vel2 = {1, 2, 3};
   move(&pos2, &vel2, 3.0); // object pos gets changed
   std::cout << pos2.x << " " << pos2.y << " " << pos2.z << std::endl; // prints: 3 6 9
+  //Test Task E
+  // Create a new Coord3D object
+  Coord3D *p = createCoord3D(1.0, 2.0, 3.0);
+  // Print out its coordinates
+  std::cout << "Initial coordinates: (" << p->x << ", " << p->y << ", " << p->z << ")" << std::endl;
+  // Move the object by (1, 1, 1)
+  Coord3D vel = {1.0, 1.0, 1.0};
+  move(p, &vel, 1.0);
+  // Print out the updated coordinates
+  std::cout << "New coordinates: (" << p->x << ", " << p->y << ", " << p->z << ")" << std::endl;
+  // Delete the object to free up memory
+  deleteCoord3D(p);
+  return 0;
 }

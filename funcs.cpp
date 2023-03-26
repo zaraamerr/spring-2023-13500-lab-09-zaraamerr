@@ -44,9 +44,9 @@ Coord3D* fartherFromOrigin(Coord3D *p1, Coord3D *p2) {
 
 //Things to note:
 //  1. the object’s new position after the elapsed time dt can be computed as
-//  x' = x + vel.x * dt;
-//  y' = y + vel.x * dt;
-//  z' = z + vel.x * dt;
+//      x' = x + vel.x * dt;
+//      y' = y + vel.x * dt;
+//      z' = z + vel.x * dt;
 
 void move(Coord3D *ppos, Coord3D *pvel, double dt) {
     //Update the position of the object pointed to by ppos according to its velocity "pvel" and the 
@@ -56,4 +56,31 @@ void move(Coord3D *ppos, Coord3D *pvel, double dt) {
     ppos->y += pvel->y * dt;
     ppos->z += pvel->z * dt;
 }
+
+//Task E: add functions that create, delete, and coordinate objects dynamically.
+
+//This function creates a new Coord3D object dynamically using the new operator and
+//initializes its fields with the provided x, y, and z values. It returns a pointer to the newly created
+//object.
+
+Coord3D* createCoord3D(double x, double y, double z) {
+    Coord3D* point = new Coord3D; //create a new Coord3D object dynamically using the new operator
+    //initialize its fields with the provided x, y, and z values  
+    
+    point->x = x;
+    point->y = y;
+    point->z = z;
+
+    return point; //returns a pointer to the newly created object
+}
+
+//deallocates the memory pointed to by the provided pointer p using the delete operator.
+
+void deleteCoord3D(Coord3D *p) {
+    delete p;
+}
+
+
+
+
 
