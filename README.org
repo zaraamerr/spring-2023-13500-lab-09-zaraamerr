@@ -6,8 +6,7 @@
 
 * GitHub username: zaraamerr
 
-* Notes: For Task D, I created a separate .cpp file since Professor Zamansky does not want 
-us to incorporate it in main, Makefile, or tests.
+* Notes: For Task D, I created a separate .cpp file since Professor Zamansky does not want us to incorporate it in main, Makefile, or tests.
 
 
 
